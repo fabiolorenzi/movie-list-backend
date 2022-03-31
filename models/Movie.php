@@ -85,4 +85,38 @@
             printf("Error: %s.\n", $stmt->error);
             return false;
         }
+
+
+        // Update movie
+
+        public function update() {
+            $query = 'UPDATE ' . $this->table . '
+                SET title = :title, genre = :genre, rel = :rel, descr = :descr, img = :img
+                WHERE id = :id';
+
+            $stmt = $this->conn->prepare($query);
+
+            // Clean data
+            $this->title = htmlspecialchars(strip_tags($this->title));
+            $this->genre = htmlspecialchars(strip_tags($this->genre));
+            $this->rel = htmlspecialchars(strip_tags($this->rel));
+            $this->descr = htmlspecialchars(strip_tags($this->descr));
+            $this->img = htmlspecialchars(strip_tags($this->img));
+            $this->id = htmlspecialchars(strip_tags($this->id));
+
+            // Bind data
+            $stmt->bindParam(":title", $this->title);
+            $stmt->bindParam(":genre", $this->genre);
+            $stmt->bindParam(":rel", $this->rel);
+            $stmt->bindParam(":descr", $this->descr);
+            $stmt->bindParam(":img", $this->img);
+            $stmt->bindParam(":id", $this->id);
+
+            if ($stmt->execute()) {
+                return true;
+            }
+
+            printf("Error: %s.\n", $stmt->error);
+            return false;
+        }
     }
