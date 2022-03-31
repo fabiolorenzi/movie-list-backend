@@ -17,7 +17,7 @@
             $this->conn = $db;
         }
 
-        // Get single movie
+        // Get all movies
 
         public function read() {
             $query = "SELECT m.id, m.title, m.genre, m.year, m.desc, m.img, m.created_at
@@ -25,7 +25,7 @@
 
             $stmt = $this->conn->prepare($query);
             $stmt->execute();
-            
+
             return $stmt;
         }
     }
