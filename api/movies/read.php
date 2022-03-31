@@ -23,8 +23,8 @@
                 "id" => $id,
                 "title" => $title,
                 "genre" => $genre,
-                "year" => $year,
-                "desc" => $desc,
+                "rel" => $rel,
+                "descr" => $descr,
                 "img" => $img,
                 "created_at" => $created_at
             );
