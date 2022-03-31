@@ -16,7 +16,7 @@
         // Get all the reviews
 
         public function read() {
-            $query = 'SELECT r.id, r.title, r.text, m.created_at
+            $query = 'SELECT r.id, r.title, r.text, r.created_at
                 FROM ' . $this->table . ' r';
 
             $stmt = $this->conn->prepare($query);
@@ -29,7 +29,7 @@
         // Get a review by ID
 
         public function read_single() {
-            $query = 'SELECT m.id, m.title, r.text, m.created_at
+            $query = 'SELECT r.id, r.title, r.text, r.created_at
                 FROM ' . $this->table . ' r
                 WHERE 
                     r.id = ?
