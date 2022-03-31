@@ -24,4 +24,4 @@
         "created_at" => $movie->created_at
     );
 
-    print_r(json_encode($movie_arr));
+    echo json_encode($movie_arr);
