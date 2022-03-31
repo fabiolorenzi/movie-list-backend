@@ -120,6 +120,9 @@
             return false;
         }
 
+        
+        // Delete movie
+
         public function delete() {
             $query = 'DELETE FROM ' . $this->table . ' WHERE id = :id';
             $stmt = $this->conn->prepare($query);
