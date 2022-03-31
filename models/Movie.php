@@ -13,15 +13,15 @@
 
 
         // To connect to the db
-        public function _construct($db) {
+        public function __construct($db) {
             $this->conn = $db;
         }
 
         // Get all movies
 
         public function read() {
-            $query = "SELECT m.id, m.title, m.genre, m.year, m.desc, m.img, m.created_at
-                FROM " . $this->table . " m";
+            $query = 'SELECT m.id, m.title, m.genre, m.year, m.desc, m.img, m.created_at
+                FROM ' . $this->table . ' m';
 
             $stmt = $this->conn->prepare($query);
             $stmt->execute();
