@@ -1,9 +1,9 @@
 <?php
     class Database  {
-        private $host = "eu-cdbr-west-02.cleardb.net";
-        private $username = "bac1d06d960ff7";
-        private $password = "af0ed932";
-        private $db_name = "heroku_1eb4b7e89ea7bd0";
+        private $host = "127.0.0.1:3306";
+        private $username = "user_movieList";
+        private $password = "fl0R!bN9m";
+        private $db_name = "movieList";
         private $conn;
 
         public function connect() {
